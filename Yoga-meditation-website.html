@@ -1,1 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ananda - Yoga & Meditation Wellness</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:#F8F5EF;color:#3A4A3A;line-height:1.6}
+h1,h2,h3{font-family:'Playfair Display',serif;color:#2D4A35}
+a{text-decoration:none;color:inherit}
 
+/* Navbar */
+nav{display:flex;justify-content:space-between;align-items:center;padding:18px 5%;background:#fff;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,0.05)}
+.logo{font-size:28px;font-weight:700;color:#5A8A6A}
+.logo span{color:#C9A86A}
+nav ul{display:flex;list-style:none;gap:25px}
+nav ul li{font-weight:400;cursor:pointer}
+.btn{background:#5A8A6A;color:#fff;padding:10px 22px;border-radius:30px;border:none;cursor:pointer}
+.btn:hover{background:#2D4A35}
+
+/* Hero */
+.hero{display:flex;flex-wrap:wrap;align-items:center;padding:50px 5%;gap:30px}
+.hero-text{flex:1;min-width:300px}
+.hero-text h1{font-size:52px;line-height:1.2}
+.hero-text h1 i{color:#C9A86A;font-style:italic}
+.hero-text p{margin:18px 0;color:#666}
+.hero-img{flex:1;min-width:300px}
+.hero-img img{width:100%;border-radius:30px;height:420px;object-fit:cover}
+.stats{display:flex;gap:30px;margin-top:20px}
+.stats b{font-size:24px;color:#2D4A35}
+
+/* Section Title */
+.section{padding:60px 5%}
+.section-title{text-align:center;margin-bottom:35px}
+.section-title h2{font-size:36px}
+.section-title p{color:#777}
+
+/* Yoga Poses */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 5px 20px rgba(0,0,0,0.06)}
+.card img{width:100%;height:180px;object-fit:cover}
+.card-body{padding:18px}
+.card-body h3{margin-bottom:6px}
+.tag{background:#E8F0E9;color:#5A8A6A;padding:4px 10px;border-radius:20px;font-size:12px}
+.card-body p{font-size:14px;color:#777;margin-top:8px}
+
+/* Meditation */
+.meditation{background:#E8F0E9;border-radius:30px;display:flex;flex-wrap:wrap;gap:30px;padding:40px}
+.meditation div{flex:1;min-width:280px}
+.meditation img{width:100%;border-radius:20px;height:300px;object-fit:cover}
+.tech{margin:15px 0;padding:15px;background:#fff;border-radius:15px;display:flex;gap:15px;align-items:center}
+
+/* Instructors */
+.instructor{text-align:center}
+.instructor img{width:130px;height:130px;border-radius:50%;object-fit:cover;border:4px solid #fff;box-shadow:0 5px 15px rgba(0,0,0,0.1)}
+.instructor h3{margin-top:12px}
+
+/* Table Schedule */
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:15px;overflow:hidden}
+th,td{padding:14px;text-align:left;border-bottom:1px solid #eee}
+th{background:#2D4A35;color:#fff}
+
+/* Pricing */
+.pricing{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.price-card{background:#fff;padding:30px;border-radius:20px;text-align:center;border:2px solid #eee}
+.price-card.featured{border-color:#5A8A6A;background:#2D4A35;color:#fff}
+.price-card.featured h2,.price-card.featured h3{color:#fff}
+.price-card h2{font-size:40px;margin:10px 0}
+.price-card ul{list-style:none;text-align:left;margin:20px 0;line-height:2}
+.price-card ul li::before{content:"✓ ";color:#5A8A6A;font-weight:bold}
+
+/* Articles */
+.article-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.article-grid .card-body p{color:#555}
+
+/* Footer */
+footer{background:#2D4A35;color:#fff;text-align:center;padding:30px;margin-top:40px}
+@media(max-width:600px){.hero-text h1{font-size:36px}nav ul{display:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Ananda<span>.</span></div>
+  <ul><li>Poses</li><li>Meditation</li><li>Teachers</li><li>Schedule</li><li>Plans</li></ul>
+  <button class="btn" onclick="alert('Welcome to Ananda! Your free trial started.')">Join Now</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <p>🧘‍♀️ WELCOME TO ANANDA WELLNESS</p>
+    <h1>Find Your <i>Inner Peace</i> Through Yoga & Meditation</h1>
+    <p>Calm your mind, strengthen your body. Join 10,000+ members in our journey to wellness with
