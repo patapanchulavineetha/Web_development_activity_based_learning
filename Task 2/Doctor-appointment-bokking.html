@@ -1,1 +1,186 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HealthCare+ | Doctor Appointment Booking</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Inter:wght@600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:#F2F7FF;color:#222}
+h1,h2{font-family:'Inter',sans-serif}
+a{text-decoration:none;color:inherit}
+nav{display:flex;justify-content:space-between;align-items:center;padding:16px 5%;background:#fff;position:sticky;top:0;z-index:99;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+.logo{font-size:26px;font-weight:700;color:#0A6ED1}
+.logo span{color:#00C6A0}
+nav ul{display:flex;list-style:none;gap:25px}
+.btn{background:#0A6ED1;color:#fff;padding:10px 22px;border-radius:8px;border:none;cursor:pointer;font-weight:500}
+.btn2{background:#00C6A0}
+.hero{display:flex;flex-wrap:wrap;gap:30px;align-items:center;padding:40px 5%;background:linear-gradient(90deg,#E6F2FF,#fff)}
+.hero-text{flex:1;min-width:300px}
+.hero-text h1{font-size:48px;line-height:1.2;color:#0B2447}
+.hero-text h1 span{color:#0A6ED1}
+.hero-text p{color:#555;margin:15px 0}
+.search-box{background:#fff;padding:10px;border-radius:12px;display:flex;gap:10px;box-shadow:0 5px 20px rgba(0,0,0,0.08);margin-top:20px}
+.search-box input,.search-box select{flex:1;padding:12px;border:1px solid #ddd;border-radius:8px;outline:none}
+.hero-img{flex:1;min-width:300px}
+.hero-img img{width:100%;height:380px;object-fit:cover;border-radius:20px}
+.section{padding:50px 5%}
+.sec-title{text-align:center;margin-bottom:30px}
+.sec-title h2{font-size:32px;color:#0B2447}
+.filter{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:25px}
+.filter button{padding:8px 18px;border-radius:30px;border:1px solid #0A6ED1;background:#fff;cursor:pointer}
+.filter button.active,.filter button:hover{background:#0A6ED1;color:#fff}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.card{background:#fff;border-radius:18px;padding:20px;box-shadow:0 5px 18px rgba(0,0,0,0.05);text-align:center}
+.card img{width:110px;height:110px;border-radius:50%;object-fit:cover;border:3px solid #E6F2FF}
+.card h3{margin-top:10px}
+.spec{color:#0A6ED1;font-size:13px;font-weight:600;background:#E6F2FF;padding:4px 12px;border-radius:20px;display:inline-block;margin:6px 0}
+.rating{color:#FFA500}
+.timing{font-size:13px;color:#555;margin:8px 0;text-align:left;background:#F8FAFF;padding:10px;border-radius:10px}
+.slot{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.slot span{font-size:12px;padding:6px 12px;border:1px solid #00C6A0;border-radius:20px;cursor:pointer}
+.slot span:hover,.slot span.selected{background:#00C6A0;color:#fff}
+.slot span.booked{background:#eee;color:#999;border-color:#ddd;text-decoration:line-through;cursor:not-allowed}
+
+/* Booking Form */
+.booking{display:flex;flex-wrap:wrap;gap:30px;background:#fff;border-radius:20px;padding:30px;box-shadow:0 10px 30px rgba(0,0,0,0.06)}
+.form-left{flex:1;min-width:300px}
+.form-right{flex:1;min-width:300px;background:#0B2447;color:#fff;border-radius:15px;padding:25px}
+label{font-size:13px;font-weight:600;display:block;margin:12px 0 5px}
+input,select,textarea{width:100%;padding:11px;border:1px solid #ddd;border-radius:8px;outline:none}
+input:focus{border-color:#0A6ED1}
+.row{display:flex;gap:15px}
+.row div{flex:1}
+.success{display:none;background:#D1FAE5;color:#065F46;padding:12px;border-radius:8px;margin-top:15px;text-align:center}
+footer{background:#0B2447;color:#fff;text-align:center;padding:25px;margin-top:40px}
+@media(max-width:600px){.hero-text h1{font-size:32px}nav ul{display:none}.row{flex-direction:column}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">HealthCare<span>+</span></div>
+  <ul><li>Doctors</li><li>Specializations</li><li>Timings</li><li>Book Now</li></ul>
+  <button class="btn">Emergency: 108</button>
+</nav>
+
+<section class="hero">
+  <div class="hero-text">
+    <p>🏥 TRUSTED BY 50,000+ PATIENTS</p>
+    <h1>Book Your <span>Doctor Appointment</span> In 2 Minutes</h1>
+    <p>Find best doctors near you, check live slots and book instantly. No waiting, no queue.</p>
+    <div class="search-box">
+      <select><option>Select Specialization</option><option>Cardiologist</option><option>Dermatologist</option><option>Pediatrician</option><option>General Physician</option></select>
+      <input type="text" placeholder="Search Doctor / Hospital...">
+      <button class="btn">Search</button>
+    </div>
+    <p style="font-size:13px;margin-top:12px">⭐ 4.9 Rating | 🕐 24/7 Support | ✅ Verified Doctors</p>
+  </div>
+  <div class="hero-img"><img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800"></div>
+</section>
+
+<!-- DOCTORS -->
+<section class="section">
+  <div class="sec-title"><h2>Our Specialist Doctors</h2><p>Profiles, timings & live available slots</p></div>
+  <div class="filter">
+    <button class="active">All</button><button>Cardiologist</button><button>Dermatologist</button><button>Pediatrician</button><button>General</button>
+  </div>
+  <div class="cards">
+    <!-- Doctor 1 -->
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400">
+      <h3>Dr. Priya Reddy</h3><span class="spec">Cardiologist - MD, DM</span><p class="rating">★★★★★ 4.9 (2.3k reviews)</p>
+      <div class="timing">🕐 Mon - Sat: 9 AM - 1 PM<br>🏥 Apollo Hospital, Vijayawada<br>💰 Fee: ₹600 | Exp: 12 Yrs</div>
+      <p style="font-size:13px;text-align:left"><b>Available Slots Today:</b></p>
+      <div class="slot"><span onclick="selectSlot(this)">09:00 AM</span><span onclick="selectSlot(this)">10:30 AM</span><span class="booked">11:00 AM</span><span onclick="selectSlot(this)">12:00 PM</span></div>
+      <button class="btn" style="width:100%" onclick="bookDoctor('Dr. Priya Reddy')">Book Appointment</button>
+    </div>
+    <!-- Doctor 2 -->
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400">
+      <h3>Dr. Arjun Kumar</h3><span class="spec">Dermatologist - MBBS, MD</span><p class="rating">★★★★★ 4.8 (1.8k reviews)</p>
+      <div class="timing">🕐 Mon - Fri: 4 PM - 9 PM<br>🏥 Skin Care Clinic, Nuzvid<br>💰 Fee: ₹500 | Exp: 8 Yrs</div>
+      <p style="font-size:13px;text-align:left"><b>Available Slots Today:</b></p>
+      <div class="slot"><span onclick="selectSlot(this)">04:30 PM</span><span onclick="selectSlot(this)">05:30 PM</span><span onclick="selectSlot(this)">06:30 PM</span><span class="booked">07:00 PM</span></div>
+      <button class="btn" style="width:100%" onclick="bookDoctor('Dr. Arjun Kumar')">Book Appointment</button>
+    </div>
+    <!-- Doctor 3 -->
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400">
+      <h3>Dr. Sneha Iyer</h3><span class="spec">Pediatrician - MD Pediatrics</span><p class="rating">★★★★★ 5.0 (3.1k reviews)</p>
+      <div class="timing">🕐 Daily: 10 AM - 2 PM<br>🏥 Rainbow Children Hospital<br>💰 Fee: ₹700 | Exp: 10 Yrs</div>
+      <p style="font-size:13px;text-align:left"><b>Available Slots Today:</b></p>
+      <div class="slot"><span onclick="selectSlot(this)">10:00 AM</span><span class="booked">11:00 AM</span><span onclick="selectSlot(this)">12:30 PM</span><span onclick="selectSlot(this)">01:30 PM</span></div>
+      <button class="btn" style="width:100%" onclick="bookDoctor('Dr. Sneha Iyer')">Book Appointment</button>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING FORM -->
+<section class="section" style="padding-top:0">
+  <div class="sec-title"><h2>Patient Registration & Booking</h2><p>Clear labels, easy navigation - fill in 30 seconds</p></div>
+  <div class="booking">
+    <div class="form-left">
+      <form id="bookForm">
+        <div class="row">
+          <div><label>Full Name *</label><input type="text" id="pname" placeholder="Ex: Patapanchula Vineetha" required></div>
+          <div><label>Mobile Number *</label><input type="tel" placeholder="10-digit mobile" required></div>
+        </div>
+        <div class="row">
+          <div><label>Age</label><input type="number" placeholder="Ex: 21"></div>
+          <div><label>Gender</label><select><option>Female</option><option>Male</option><option>Other</option></select></div>
+        </div>
+        <label>Select Doctor *</label>
+        <select id="doctorSelect"><option>Dr. Priya Reddy - Cardiologist</option><option>Dr. Arjun Kumar - Dermatologist</option><option>Dr. Sneha Iyer - Pediatrician</option></select>
+        <label>Select Date *</label><input type="date">
+        <label>Select Time Slot *</label>
+        <select><option>09:00 AM - Morning</option><option>10:30 AM - Morning</option><option>04:30 PM - Evening</option><option>06:30 PM - Evening</option></select>
+        <label>Health Problem / Symptoms</label><textarea rows="3" placeholder="Ex: Fever, chest pain since 2 days..."></textarea>
+        <button class="btn btn2" style="width:100%;margin-top:18px;padding:13px;font-size:16px">Confirm Appointment →</button>
+        <div class="success" id="successMsg">✅ Appointment Booked Successfully! Details sent to your mobile.</div>
+      </form>
+    </div>
+    <div class="form-right">
+      <h3 style="color:#fff">Why HealthCare+ ?</h3>
+      <ul style="line-height:2.2;margin-top:15px;list-style:none">
+        <li>✅ Instant Confirmation on SMS</li>
+        <li>✅ Live Slot Availability</li>
+        <li>✅ Verified & Experienced Doctors</li>
+        <li>✅ Easy Reschedule / Cancel</li>
+        <li>✅ Digital Prescription</li>
+      </ul>
+      <div style="background:#fff;color:#222;padding:15px;border-radius:12px;margin-top:20px">
+        <b>Today's Availability</b><br>
+        <small>🟢 15 Doctors Available Now<br>🕐 Next Slot: 10:30 AM<br>🏥 4 Hospitals Near You</small>
+      </div>
+      <p style="font-size:12px;margin-top:15px;opacity:0.8">Need help? Call: 1800-123-4567</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <h2 style="color:#fff">HealthCare+</h2>
+  <p>Your Health, Our Priority | Book • Consult • Heal</p>
+  <p style="font-size:12px;margin-top:8px">© 2026 HealthCare+ | Created by Patapanchula Vineetha | Web Development Activity Based Learning</p>
+</footer>
+
+<script>
+function selectSlot(el){
+  document.querySelectorAll('.slot span').forEach(s=>s.classList.remove('selected'));
+  el.classList.add('selected');
+  alert('Slot Selected: ' + el.innerText);
+}
+function bookDoctor(name){
+  document.getElementById('doctorSelect').value = document.querySelector('#doctorSelect option');
+  document.getElementById('bookForm').scrollIntoView({behavior:'smooth'});
+  alert(name + ' selected. Please fill patient details below.');
+}
+document.getElementById('bookForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  document.getElementById('successMsg').style.display='block';
+});
+</script>
+</body>
+  </html>
